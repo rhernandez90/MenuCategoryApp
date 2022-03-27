@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <button class="btn btn-primary btn-circle btn-md" (click)="goToCreateProject()">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+
+  <br>
+
+  <div class="card ml-2 mt-2 col-md-3" *ngFor="let item of projects">
+
+
+    <div class="card-body">
+      <h5 class="card-title" [style.background]="item.backgroundColor">{{item.name}}</h5>
+      <p class="card-text">{{item.description}}</p>
+
+
+      <div> <label width=200>Pending Taks </label> <span class="fr">{{ item.pendingTasks }} </span> </div>
+      <div> <label width=200>In Progress Taks </label> <span class="fr">{{ item.inprogressTasks }}</span> </div>
+      <div> <label width=200>Done Taks </label> <span class="fr">{{ item.doneTasks }}</span> </div>
+      <div> <label width=200>Rejected Taks </label> <span class="fr">{{ item.rejectedTasks }}</span> </div>
+      <div id="overdueTask" *ngIf="item.overdueTasks>0">
+        <a width=200 style="cursor: pointer;" (click)="openModalWithComponent(item.id)">Overdue Taks</a><span class="fr">{{ item.overdueTasks }}</span>
+      </div>
+
+
+
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary" (click)="goToTasks(item.id)">
+        Go
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,24 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+  </div>
+  <span>User: {{user?.username }}</span>
+  <span class="pl-4">Role: {{user?.roles }}</span>
+</div>
+<div class="header-container">
+
+  <nb-actions size="small">
+    <nb-action class="user-action">
+      <nb-user [name]="user?.username">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+
+  <span>
+    <i class="fas fa-sign-out-alt" style="font-size:3m" (click)="logout()"></i>
+  </span>
+
+
+</div>

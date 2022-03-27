@@ -1,0 +1,51 @@
+
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Overdue Tasks</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+
+            <div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Resource</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tasks" [ngClass]="{'alert-row': item.isOverdue == true}">
+                            <td>{{item.id}}</td>
+                            <td>{{item.taskName}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.note}}</td>
+                            <td>{{item.startDate | date: 'yyyy-MM-dd mm:ss'}}</td>
+                            <td>{{item.endDate | date: 'yyyy-MM-dd mm:ss'}}</td>
+                            <td>{{item.statusLabel}}</td>
+                            <td>
+
+                                <span *ngFor="let person of item.persons"
+                                    [ngClass]="{'alert-row': item.isOverdue == true}">
+                                    <nb-user [name]="person.name">
+                                    </nb-user>
+                                </span>
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>

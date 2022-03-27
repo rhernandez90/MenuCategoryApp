@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Task Form</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+
+    <form name="TaskForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" name="taskName" class="form-control" fullWidth placeholder="task name"
+                [(ngModel)]="TaskForm.taskName" required #taskName="ngModel">
+            <div class="alert alert-danger" role="alert" *ngIf="taskName.errors && f.submitted">
+                Name is required!
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" class="form-control" fullWidth placeholder="Description"
+                [(ngModel)]="TaskForm.description" required #description="ngModel">
+            <div class="alert alert-danger" role="alert" *ngIf="description.errors && f.submitted">
+                Description is required!
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Start Date</label>
+            <input type="datetime-local" name="startDate" class="form-control" 
+                [ngModel]="TaskForm.startDate">
+        </div>
+
+        <div class="form-group">
+            <label for="">End Date</label>
+            <input type="datetime-local" name="endDate" class="form-control" 
+                [(ngModel)]="TaskForm.endDate">
+        </div>
+
+        <div class="form-group">
+            <label for="">Notes</label>
+            <input type="text" name="note" class="form-control" placeholder="xxxxxxxx" [(ngModel)]="TaskForm.note">
+        </div>
+
+        <div class="form-group">
+            <label>Resource</label>
+            <select name="assignedPerson" class='form-control' [(ngModel)]="TaskForm.assignedPerson">
+                <option *ngFor="let item of persons" [value]='item.id'>{{ item.firstName + " " + item.lastName }}
+                </option>
+            </select>
+        </div>
+
+
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+
+
+
+    </form>
+
+</div>
