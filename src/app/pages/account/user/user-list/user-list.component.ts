@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalDataSource } from 'ng2-smart-table';
 import { SmartTableData } from '../../../../@core/data/smart-table';
+import { UserDto } from '../../../../Services/User/Dto/UsertDto';
+import { UserService } from '../../../../Services/User/user.service';
 
 @Component({
   selector: 'ngx-user-list',
@@ -10,75 +13,27 @@ import { SmartTableData } from '../../../../@core/data/smart-table';
 export class UserListComponent implements OnInit {
 
   
+  users : Array<UserDto> = [];
 
+  constructor(
+    private _userService : UserService,
+    private router: Router
+  ) {
 
-
-  settings = {
-    //hideSubHeader: true,
-    add: {
-      addButtonContent: '<i class="nb-plus"></i>',
-      createButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    edit: {
-      editButtonContent: '<i class="nb-edit"></i>',
-      saveButtonContent: '<i class="nb-checkmark"></i>',
-      cancelButtonContent: '<i class="nb-close"></i>',
-    },
-    delete: {
-      deleteButtonContent: '<i class="nb-trash"></i>',
-      confirmDelete: true,
-    },
-    actions: {
-      //delete: false, //  if you want to remove delete button
-      //edit: false, // if you want to remove edit button
-      add : false
-    },
-    columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-      },
-      firstName: {
-        title: 'First Name',
-        type: 'string',
-      },
-      lastName: {
-        title: 'Last Name',
-        type: 'string',
-      },
-      username: {
-        title: 'Username',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
-      },
-      
-    },
-  };
-
-  source: LocalDataSource = new LocalDataSource();
-
-  constructor(private service: SmartTableData) {
-    const data = this.service.getData();
-    this.source.load(data);
   }
 
   ngOnInit(): void {
+    this.loadUsers();
   }
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+  loadUsers() : void {
+    this._userService.GetAll().subscribe( res => {
+      this.users = res["$values"];
+    })
+  }
+
+  registerUser(){
+    this.router.navigate(['/pages/users/register'])
   }
 
 }

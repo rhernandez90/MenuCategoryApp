@@ -10,7 +10,6 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { ProjectService } from '../Services/Project/project.service';
 import { TasksComponent } from './tasks/tasks.component';
 import { RouterModule } from '@angular/router';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -18,6 +17,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CreateTaskComponent } from './tasks/create/create.component';
 import { EditTaskComponent } from './tasks/edit/edit.component';
 import { UserListComponent } from './account/user/user-list/user-list.component';
+import { DxDataGridModule } from 'devextreme-angular';
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -33,7 +33,7 @@ import { UserListComponent } from './account/user/user-list/user-list.component'
     NbUserModule,
     NbIconModule,
     NbButtonModule,
-    
+    DxDataGridModule,
     ModalModule.forRoot()
   ],
   declarations: [

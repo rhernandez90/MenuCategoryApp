@@ -1,11 +1,33 @@
-<nb-card>
+<nb-card class="bg-light">
     <nb-card-header>
-      Smart Table
+        Users
     </nb-card-header>
-  
+
     <nb-card-body>
-      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)">
-      </ng2-smart-table>
+        <div class="row">
+            <div class="col-12">
+                <button     
+                    type="button" 
+                    class="btn btn-primary" 
+                    style="float:right"
+                    (click)="registerUser()">
+                    Add User
+                </button>
+
+            </div>
+            <div class="col-12 mt-2">
+                <dx-data-grid id="gridContainer" [dataSource]="users"
+                keyExpr="id" [allowColumnReordering]="true" [allowColumnResizing]="true"
+                [columnAutoWidth]="true" [showBorders]="true">
+                <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+                <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+                <dxi-column dataField="userName" ></dxi-column>
+                <dxi-column dataField="email" ></dxi-column>
+                <dxi-column dataField="phoneNumber" ></dxi-column>
+                <dxi-column dataField="roles" ></dxi-column>
+            </dx-data-grid>
+            </div>
+        </div>
+
     </nb-card-body>
-  </nb-card>
-  
+</nb-card>
