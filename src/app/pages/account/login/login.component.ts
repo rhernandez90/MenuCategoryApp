@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../../Services/authentication/login/login.service';
 import { TokenStorageService } from '../../../Services/authentication/TokenStorage/token-storage.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { Router } from '@angular/router';
+import { MENU_ITEMS } from '../../pages-menu';
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
@@ -61,5 +64,7 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     window.location.reload();
   }
+
+
 
 }

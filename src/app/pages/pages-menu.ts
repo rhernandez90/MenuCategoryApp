@@ -7,15 +7,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //   icon: 'home-outline',
   //   link: '/pages/project-dashboard',
   // },
-  {
-    title: 'Register users',
-    icon: 'lock-outline',
-    link: '/pages/users/register',
-  },
+  // {
+  //   title: 'Register users',
+  //   icon: 'lock-outline',
+  //   link: '/pages/users/register',
+  // },
   {
     title: 'users',
     icon: 'lock-outline',
     link: '/pages/users',
+    data : {role:'Admin'}
   },
 
   // {

@@ -26,4 +26,8 @@ export class UserService extends BaseComponent {
     return this.http.get<Array<UserDto>>(this.baseUrl + '/user');
   }
 
+  Delete(userId : string): Observable<any> {
+    return this.http.delete<Observable<any>>(`${this.baseUrl}/user/${userId}`);
+  }
+
 }
