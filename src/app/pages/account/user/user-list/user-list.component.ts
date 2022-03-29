@@ -29,7 +29,7 @@ export class UserListComponent implements OnInit {
 
   loadUsers() : void {
     this._userService.GetAll().subscribe( res => {
-      this.users = res["$values"];
+      this.users = res;
     })
   }
 
@@ -56,8 +56,6 @@ export class UserListComponent implements OnInit {
         Swal.fire('Changes are not saved', '', 'info')
       }
     })
-
-
   }
 
 }

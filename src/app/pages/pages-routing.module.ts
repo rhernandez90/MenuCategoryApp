@@ -9,6 +9,9 @@ import { TasksComponent } from './tasks/tasks.component';
 import { AddProjectModalComponent } from './dashboard/add-project-modal/add-project-modal.component';
 import { UserListComponent } from './account/user/user-list/user-list.component';
 import { RegisterComponent } from './account/register/register.component';
+import { MenuCategoryListComponent } from './MenuCategory/menu-category-list/menu-category-list.component';
+import { createComponent } from '@angular/compiler/src/core';
+import { CreateComponent } from './MenuCategory/create/create.component';
 
 const routes: Routes = [{
   path: '',
@@ -33,6 +36,14 @@ const routes: Routes = [{
     {
       path: 'users',
       component: UserListComponent,
+    },
+    {
+      path: 'menucategories',
+      component: MenuCategoryListComponent,
+    },
+    {
+      path: 'menucategories/create',
+      component: CreateComponent,
     },
     {
       path: 'users/register',

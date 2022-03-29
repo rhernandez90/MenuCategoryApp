@@ -6,31 +6,27 @@
     <nb-card-body>
         <div class="row">
             <div class="col-12">
-                <button     
-                    type="button" 
-                    class="btn btn-primary" 
-                    style="float:right"
-                    (click)="registerUser()">
+                <button type="button" class="btn btn-primary" style="float:right" (click)="registerUser()">
                     Add User
                 </button>
 
             </div>
             <div class="col-12 mt-2">
-                <dx-data-grid id="gridContainer" [dataSource]="users"
-                keyExpr="id" [allowColumnReordering]="true" [allowColumnResizing]="true"
-                [columnAutoWidth]="true" [showBorders]="true">
-                <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
-                <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
-                <dxi-column dataField="userName" ></dxi-column>
-                <dxi-column dataField="email" ></dxi-column>
-                <dxi-column dataField="roles" ></dxi-column>
-                <dxi-column dataField="id" cellTemplate="cellTemplate" ></dxi-column>
+                <dx-data-grid id="gridContainer" [dataSource]="users" keyExpr="id" [allowColumnReordering]="true"
+                    [allowColumnResizing]="true" [columnAutoWidth]="true" [showBorders]="true">
+                    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+                    <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+                    <dxi-column dataField="userName"></dxi-column>
+                    <dxi-column dataField="email"></dxi-column>
+                    <dxi-column dataField="roles"></dxi-column>
+                    <dxi-column dataField="id" cellTemplate="cellTemplate"></dxi-column>
 
-                <div *dxTemplate="let data of 'cellTemplate'">
-                    <button type="button" class="btn btn-warning btn-sm" (click)="delete(data.value)">Delete</button>
-                  </div>
+                    <div *dxTemplate="let data of 'cellTemplate'">
+                        <button type="button" class="btn btn-warning btn-sm"
+                            (click)="delete(data.value)">Delete</button>
+                    </div>
 
-            </dx-data-grid>
+                </dx-data-grid>
             </div>
         </div>
 

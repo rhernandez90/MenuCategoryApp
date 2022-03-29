@@ -18,6 +18,8 @@ import { CreateTaskComponent } from './tasks/create/create.component';
 import { EditTaskComponent } from './tasks/edit/edit.component';
 import { UserListComponent } from './account/user/user-list/user-list.component';
 import { DxDataGridModule } from 'devextreme-angular';
+import { MenuCategoryListComponent } from './MenuCategory/menu-category-list/menu-category-list.component';
+import { CreateComponent } from './MenuCategory/create/create.component';
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -43,7 +45,9 @@ import { DxDataGridModule } from 'devextreme-angular';
     TasksComponent,
     CreateTaskComponent,
     EditTaskComponent,
-    UserListComponent
+    UserListComponent,
+    MenuCategoryListComponent,
+    CreateComponent
   ],
 })
 export class PagesModule {

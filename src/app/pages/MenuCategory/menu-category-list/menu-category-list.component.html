@@ -1,0 +1,45 @@
+<nb-card class="bg-light">
+    <nb-card-header>
+        Menu Categories
+    </nb-card-header>
+
+    <nb-card-body>
+        <div class="row">
+            <div class="col-12">
+                <button     
+                    type="button" 
+                    class="btn btn-primary" 
+                    style="float:right"
+                    (click)="addMenu()">
+                    Add Menu
+                </button>
+
+            </div>
+            <div class="col-12 mt-2">
+                <dx-data-grid id="gridContainer" [dataSource]="menuCategories"
+                keyExpr="id" [allowColumnReordering]="true" [allowColumnResizing]="true"
+                [columnAutoWidth]="true" [showBorders]="true">
+                <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+                <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+                <dxi-column dataField="description" ></dxi-column>
+                <dxi-column dataField="mainCategory" ></dxi-column>
+                <dxi-column dataField="parentMenu" ></dxi-column>
+                <dxi-column dataField="role"></dxi-column>
+                <dxi-column dataField="id" cellTemplate="cellTemplate"></dxi-column>
+
+
+                <div *dxTemplate="let data of 'cellTemplate'">
+                    <button 
+                    type="button" 
+                    class="btn btn-warning btn-sm"
+                    *ngIf="!data.data.mainCategory"
+                    (click)="delete(data.value)">Delete</button>
+                </div>
+
+
+            </dx-data-grid>
+            </div>
+        </div>
+
+    </nb-card-body>
+</nb-card>
