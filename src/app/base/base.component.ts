@@ -1,5 +1,5 @@
 import { Component, isDevMode, OnInit } from '@angular/core';
-
+import  appConfig from "../../assets/config.json"
 @Component({
   selector: 'ngx-base',
   templateUrl: './base.component.html',
@@ -13,12 +13,12 @@ export class BaseComponent implements OnInit {
   }
   
   getBaseUrl(): string {
+
     if (isDevMode()) {
-        return   "http://localhost:8245";
+        return   appConfig.localBaseUrl;
     }
     else {
-        
-        return "http://taskapp-api.azurewebsites.net"; 
+        return appConfig.productionBaseUrl; 
     }
 }
 
