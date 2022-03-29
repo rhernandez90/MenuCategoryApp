@@ -47,7 +47,6 @@ export class CreateComponent implements OnInit {
         timer: 7000
       })
       this.router.navigate(['/pages/menucategories'])
-      window.location.reload();
     })
   }
   

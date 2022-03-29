@@ -4,30 +4,24 @@ import { NbButtonModule, NbCardModule, NbIconModule, NbMenuModule, NbUserModule 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { TasksComponent } from './tasks/tasks.component';
 import { RouterModule } from '@angular/router';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { CreateTaskComponent } from './tasks/create/create.component';
-import { EditTaskComponent } from './tasks/edit/edit.component';
 import { UserListComponent } from './account/user/user-list/user-list.component';
 import { DxDataGridModule } from 'devextreme-angular';
 import { MenuCategoryListComponent } from './MenuCategory/menu-category-list/menu-category-list.component';
 import { CreateComponent } from './MenuCategory/create/create.component';
+
 @NgModule({
   imports: [
     PagesRoutingModule,
     ThemeModule,
     NbMenuModule,
     DashboardModule,
-    ECommerceModule,
-    MiscellaneousModule,
     FormsModule,
     RouterModule,
     NbCardModule,
@@ -42,12 +36,9 @@ import { CreateComponent } from './MenuCategory/create/create.component';
     PagesComponent,
     LoginComponent,
     RegisterComponent,
-    TasksComponent,
-    CreateTaskComponent,
-    EditTaskComponent,
     UserListComponent,
     MenuCategoryListComponent,
-    CreateComponent
+    CreateComponent,
   ],
 })
 export class PagesModule {

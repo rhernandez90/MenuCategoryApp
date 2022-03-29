@@ -25,7 +25,7 @@ export class MenuCategoryService extends BaseComponent {
 
 
   GetTree(): Observable<Array<any>> {
-    return this.http.get<Array<IMenuCategoryList>>(this.baseUrl + '/menucategories/menuthree');
+    return this.http.get<Array<IMenuCategoryList>>(this.baseUrl + '/menucategories/menutree');
   }
 
   GetAll(): Observable<any> {
