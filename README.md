@@ -27,14 +27,14 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-3. You can change the api url by updating  ###BaseComponent
+3. if you need  change the api url or port just update the  **BaseComponent**
    ```js
        if (isDevMode()) {
         return   "http://localhost:8245";
       }
    ```
 
-4. Enter your API in `config.js`
+4. Run proyect 
    ```js
    npm start;
    ```
