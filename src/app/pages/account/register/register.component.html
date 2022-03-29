@@ -38,6 +38,7 @@
             </div>
 
             <div class="form-group">
+                <label for="password">Roles</label>
                 <select name="role" class='form-control'  [(ngModel)]="user.role" required #role="ngModel">
                     <option value='Admin'>Admin</option>
                     <option value='User'>User</option>
@@ -56,7 +57,7 @@
                 </button>
 
                 <button class="btn btn-primary ml-2">
-                    Register
+                    {{saveButtonTitle}}
                 </button>
 
 

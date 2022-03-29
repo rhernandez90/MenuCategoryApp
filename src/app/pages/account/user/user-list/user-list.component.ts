@@ -37,6 +37,10 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/pages/users/register'])
   }
 
+  update(id){
+    this.router.navigate(['/pages/users/register/'+id])
+  }
+
   delete( userId : string ) {
 
     Swal.fire({

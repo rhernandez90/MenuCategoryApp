@@ -24,12 +24,12 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: 'project/create',
-    component: AddProjectModalComponent
-    },
-    {
       path: 'users',
       component: UserListComponent,
+    },
+    {
+      path: 'users/update/:id',
+      component: RegisterComponent,
     },
     {
       path: 'menucategories',

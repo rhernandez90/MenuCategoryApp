@@ -24,6 +24,13 @@
                     <div *dxTemplate="let data of 'cellTemplate'">
                         <button type="button" class="btn btn-warning btn-sm"
                             (click)="delete(data.value)">Delete</button>
+
+
+                        <button class="btn btn-info btn-sm ml-2" title="Editar" [routerLink]="['/pages/users/update/',data.value]">
+                            Edit
+                        </button>
+
+                        <!-- <button type="button" class="btn btn-info btn-sm" (click)="update(data.value)">Update</button> -->
                     </div>
 
                 </dx-data-grid>
