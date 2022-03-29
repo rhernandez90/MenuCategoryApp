@@ -27,10 +27,11 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-3. if you need  change the api url or port just update the  **BaseComponent**
+3. if you need  change the api url or port just update the  file **confin.json**
    ```js
-       if (isDevMode()) {
-        return   "http://localhost:8245";
+      {
+          "localBaseUrl": "http://localhost:8245",
+          "productionBaseUrl": "http://localhost:8245"   
       }
    ```
 
